@@ -1,7 +1,5 @@
 ## Huffman-coding
 
-> WIP🦜
-
 - HuffmanNode
 
   ```javaScript
@@ -16,18 +14,25 @@
   }
   ```
 
-### example
+### Example
 
 ```javaScript
+
   const word = 'abcd',
-  wordHuffmanCoding(word)
+
+  // getWordHuffmanTree
+  const HuffmanTree =  wordHuffmanCoding(word)
+  // getWordCode
+  const code = createHuffmanCode(HuffmanTree, word.length)
+
+  console.log(code) // { a: '100', b: '101', c: '11', d: '0' }
+
 ```
+
+### Notice
+
+There are currently no statistics on the weight of characters
 
 ### Diagram
 ![diagram](/image/Diagram2.png)
-
-<br>
-
-![diagram](/image/Diagram.png)
-
 
