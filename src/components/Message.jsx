@@ -30,6 +30,7 @@ export class Message extends PureComponent {
       <MessageWrapper>
         <TextField 
           value={word} 
+          autoComplete="off"
           onChange = {e => this.changeWord(e)}
           id="outlined-basic" 
         />
