@@ -34,5 +34,5 @@
 There are currently no statistics on the weight of characters
 
 ### Diagram
-![diagram](/image/Diagram2.png)
+![diagram](/public/image/Diagram2.png)
 
