@@ -5,7 +5,7 @@
  * @returns 
  */
 export default function(HuffmanTree, length) {
-  let resultCodeObj = {}
+  let resultCodeArray = []
   for(let i = 1; i <= length; i++) {
 
     let child = i
@@ -23,8 +23,8 @@ export default function(HuffmanTree, length) {
     while(HNodeCode.length > 0) {
       resultCode += HNodeCode.pop()
     }
-    resultCodeObj[HuffmanTree[i].str] =  resultCode
+    resultCodeArray.push(resultCode)
   }
 
-  return resultCodeObj
+  return resultCodeArray
 }
