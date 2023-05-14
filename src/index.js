@@ -1,8 +1,8 @@
 import initHuffmanTree from './utils/initHuffmanTree.js'
-import CreatHuffman from './utils/creatHuffman.js'
+import CreateHuffman from './utils/createHuffman.js'
 
 export default function(word) {
   const HuffmanTree = initHuffmanTree(word)
-  CreatHuffman(HuffmanTree, word.length)
+  CreateHuffman(HuffmanTree, word.length)
   return HuffmanTree
 }
