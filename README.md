@@ -16,22 +16,15 @@
 
 ### Example
 
-```javaScript
+![example](/public/image/example1.png)
+![example](/public/image/example2.png)
 
-  const word = 'abcd',
-
-  // getWordHuffmanTree
-  const HuffmanTree =  wordHuffmanCoding(word)
-  // getWordCode
-  const code = createHuffmanCode(HuffmanTree, word.length)
-
-  console.log(code) // { a: '100', b: '101', c: '11', d: '0' }
-
-```
 
 ### Notice
 
-There are currently no statistics on the weight of characters
+- The weight of the letters comes from https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html
+
+- Non-letter weights ``const defaultWeight = 10``
 
 ### Diagram
 ![diagram](/public/image/Diagram2.png)
