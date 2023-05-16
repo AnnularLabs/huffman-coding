@@ -4,13 +4,13 @@
  * @param {*} length word长度
  * @returns 
  */
-export default function(HuffmanTree, length) {
+export default function(HuffmanTree,LETTER_FREQUENCIES ,words) {
   let resultCodeArray = []
-  for(let i = 1; i <= length; i++) {
-
-    let child = i
+  for(let i = 0; i < words.length; i++) {
+    let child = LETTER_FREQUENCIES.indexOf(words[i]) + 1
     let parent = HuffmanTree[child].parent
 
+    
     let HNodeCode = []
     while(parent !== -1) {
       HuffmanTree[parent].leftChild === child ? HNodeCode.push(0) : HNodeCode.push(1)

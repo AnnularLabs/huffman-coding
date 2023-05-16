@@ -1,16 +1,20 @@
 import { PureComponent } from 'react'
+import createWordCode from '../utils/huffman-coding/createWordCode'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button'
 import SendIcon from '@mui/icons-material/Send';
 import { MessageWrapper } from '../style';
-import createHuffmanTreeCode from '../utils/createHuffmanTreeCode'
+import decoding from '../utils/huffman-coding/decoding';
+import ThreeSixtyIcon from '@mui/icons-material/ThreeSixty';
 
 export class Message extends PureComponent {
   constructor(props) {
     super(props)
 
     this.state = {
-      word: ''
+      word: '',
+      buttonText: true,
+      changeCodeColor: 'primary'
     }
   }
 
@@ -18,14 +22,28 @@ export class Message extends PureComponent {
     this.setState({word: e.target.value})
   }
 
-  sendWord(word) {
-    const code = createHuffmanTreeCode(word)
-    this.props.getWordCode(code)
-    this.setState({word:''})
+  sendWord(word,isCode) {
+    if(isCode) {
+      const code = createWordCode(word)
+      this.props.getWordCode(code)
+      this.setState({isShowError: true, word: ''})
+    }
+    if(!isCode) {
+      const words = decoding(word)
+      this.props.getWordCode(words)
+    }
   }
 
+  changeInfo() {
+    
+    this.setState({
+      buttonText: !this.state.buttonText,
+      changeCodeColor: this.state.changeCodeColor === 'primary' ? 'secondary' : 'primary'
+    })
+  } 
+
   render() {
-    const { word } = this.state
+    const { word, buttonText, changeCodeColor} = this.state
     return (
       <MessageWrapper>
         <TextField 
@@ -37,9 +55,19 @@ export class Message extends PureComponent {
         <Button 
           variant="contained" 
           endIcon={<SendIcon />}
-          onClick={() => this.sendWord(word)}
+          onClick={() => this.sendWord(word, buttonText)}
+          id="Send"
         >
           Send
+        </Button>
+         <Button 
+          id="changeCode"
+          variant="contained" 
+          endIcon={<ThreeSixtyIcon />}
+          color={changeCodeColor}
+          onClick={() => this.changeInfo()}
+        >
+          { buttonText ? 'coding': 'decode' }
         </Button>
       </MessageWrapper>
     )

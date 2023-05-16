@@ -1,4 +1,5 @@
 import { PureComponent } from 'react'
+import createHuffmanTreeCode from '../utils/createHuffmanTreeCode'
 
 export class LiveChat extends PureComponent {
   constructor() {
@@ -8,6 +9,14 @@ export class LiveChat extends PureComponent {
       code: ''
     }
   }
+  
+  /**
+   * 进行coding
+   * @returns 
+   */
+  componentDidMount() { 
+    createHuffmanTreeCode()
+  }
 
   render() {
     const { code } = this.props
@@ -15,10 +24,10 @@ export class LiveChat extends PureComponent {
       <div>
         {
           code ? 
-          <div>{code}</div> :
-          <div>
-            Please enter the content && Greater than one📟
-          </div>
+          <h2>{code}</h2> :
+          <h2>
+            Please enter the content📟
+          </h2>
         }
       </div>
     )
