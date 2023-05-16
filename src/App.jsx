@@ -13,9 +13,7 @@ export class App extends PureComponent {
   }
 
   changeWordCode(code) {    
-    this.setState({code}, () => {
-      console.log(this.state.code)
-    })
+    this.setState({code})
   }
 
   render() {
