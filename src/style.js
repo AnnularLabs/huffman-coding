@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 
 export const AppWrapper = styled.div`
-  /* background-color: slateblue; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,14 +11,14 @@ export const AppWrapper = styled.div`
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 3vw;
     line-height: 39px;color: #06C1AB;
     font-size: 45px;
     margin-bottom: 10px;
   }
 `
 export const MessageWrapper = styled.div`
-  width: 732px;
+  width: 70vw;
   height: 56px;
   display: flex;
   justify-content: center;
@@ -28,25 +27,30 @@ export const MessageWrapper = styled.div`
   border-radius: 15px;
   #outlined-basic {
     box-sizing: border-box;
-    width: 467px;
+    width: 70vw;
     height: 32px;
   }
-  Button {
+  .MuiInputBase-root {
+    margin-left: 15px;
+  }
+  #changeCode {
+    width: 120px;
+    height: 32px;
+     margin: 0 15px 0 18px;
+  }
+  #Send {
+    background-color: #06C1AB;
     width: 206px;
     height: 32px;
-    background-color: #06C1AB;
-    margin-left: 18px;
-    &:hover{
-      background-color: #06C1AB;
-    }
-    
+     margin: 0 15px 0 18px;
   }
 `
 
 export const LiveChatWrapper = styled.div`
-  width: 732px;
-  height: 559px;
+  width: 70vw;
+  height: 70%;
   background-color: #D9D9D9;
+  border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
