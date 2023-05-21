@@ -1,5 +1,6 @@
 import { PureComponent } from 'react'
-import createWordCode from '../utils/huffman-coding/createWordCode'
+// import createWordCode from '../utils/huffman-coding/createWordCode'
+import coding from '../utils/huffman-coding/coding'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button'
 import SendIcon from '@mui/icons-material/Send';
@@ -24,7 +25,7 @@ export class Message extends PureComponent {
 
   sendWord(word,isCode) {
     if(isCode) {
-      const code = createWordCode(word)
+      const code = coding(word)
       this.props.getWordCode(code)
       this.setState({isShowError: true, word: ''})
     }

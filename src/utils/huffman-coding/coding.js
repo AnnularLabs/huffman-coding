@@ -1,10 +1,7 @@
-/**
- * 
- * @param {*} HuffmanTree 
- * @param {*} length word长度
- * @returns 
- */
-export default function(HuffmanTree,LETTER_FREQUENCIES ,words) {
+import store from "../../store"
+
+export default function(words) {
+  const { LETTER_TREE: HuffmanTree, LETTER_FREQUENCIES} = store.getState().HuffmanTree
   let resultCodeArray = []
   for(let i = 0; i < words.length; i++) {
     let child = LETTER_FREQUENCIES.indexOf(words[i]) + 1
